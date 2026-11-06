@@ -1,0 +1,290 @@
+/* =========================================================
+   estilo.css — Portfólio de Diego Davi Orlonski
+   Sem frameworks: apenas CSS3 puro.
+   ========================================================= */
+
+/* ---------- Variáveis de cor (tema claro = padrão) ---------- */
+:root {
+  --fundo: #f6f7fb;
+  --fundo-alt: #ffffff;
+  --cartao: #ffffff;
+  --texto: #1d2433;
+  --texto-suave: #5b6478;
+  --destaque: #1f5eff;
+  --destaque-texto: #ffffff;
+  --borda: #e1e5ef;
+  --sombra: 0 4px 18px rgba(20, 30, 60, .08);
+  --altura-topo: 64px;
+}
+
+/* Tema escuro: o JS troca o atributo data-tema no <html> */
+:root[data-tema="escuro"] {
+  --fundo: #0f1420;
+  --fundo-alt: #151b2b;
+  --cartao: #1b2336;
+  --texto: #e8ecf5;
+  --texto-suave: #a3adc4;
+  --destaque: #6c9bff;
+  --destaque-texto: #0b1020;
+  --borda: #2a3450;
+  --sombra: 0 4px 18px rgba(0, 0, 0, .4);
+}
+
+/* ---------- Reset básico ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;                 /* rolagem suave ao clicar nas âncoras */
+  scroll-padding-top: var(--altura-topo);  /* evita que o menu fixo cubra o título da seção */
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.65;
+  transition: background .25s, color .25s;
+}
+
+a { color: var(--destaque); }
+ul { list-style: none; }
+
+/* ---------- Menu fixo no topo ---------- */
+.topo {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--altura-topo);
+  background: var(--fundo-alt);
+  border-bottom: 1px solid var(--borda);
+  z-index: 50;
+}
+
+.menu {
+  max-width: 1040px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--texto);
+  margin-right: auto;
+}
+.logo span { color: var(--destaque); }
+
+.lista-menu { display: flex; gap: 6px; }
+
+.lista-menu a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--texto-suave);
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+.lista-menu a:hover,
+.lista-menu a.ativo {                      /* .ativo é marcado pelo JS conforme a seção visível */
+  background: var(--destaque);
+  color: var(--destaque-texto);
+}
+
+.btn-tema, .btn-menu {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  border-radius: 8px;
+  width: 40px; height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.btn-menu { display: none; }               /* só aparece no mobile (ver media query) */
+
+/* ---------- Estrutura geral das seções ---------- */
+.secao { padding: calc(var(--altura-topo) + 40px) 0 60px; min-height: 80vh; }
+.secao.alt { background: var(--fundo-alt); }
+
+.container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.container.estreito { max-width: 640px; }
+
+.titulo-secao {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.titulo-secao::after {                     /* traço decorativo abaixo do título */
+  content: "";
+  display: block;
+  width: 56px; height: 4px;
+  margin-top: 8px;
+  background: var(--destaque);
+  border-radius: 4px;
+}
+.intro { color: var(--texto-suave); margin: 14px 0 28px; }
+
+/* ---------- Componentes reutilizáveis ---------- */
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+
+.botao {
+  display: inline-block;
+  background: var(--destaque);
+  color: var(--destaque-texto);
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s, filter .15s;
+}
+.botao:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+/* ---------- Sobre mim ---------- */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.saudacao { color: var(--destaque); font-weight: 600; }
+.sobre-texto h1 { font-size: 2.6rem; line-height: 1.15; margin: 4px 0; }
+.cargo { color: var(--texto-suave); margin-bottom: 18px; }
+.sobre-texto p { margin-bottom: 14px; }
+.subtitulo { font-size: 1.15rem; margin: 22px 0 10px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.chips li {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: .92rem;
+}
+
+.dados { text-align: center; }
+.avatar {
+  width: 96px; height: 96px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--destaque);
+  color: var(--destaque-texto);
+  display: grid; place-items: center;
+  font-size: 2rem; font-weight: 700;
+}
+.dados dl { text-align: left; }
+.dados dt { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--texto-suave); margin-top: 12px; }
+.dados dd { font-weight: 500; }
+
+/* ---------- Formação ---------- */
+.colunas { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px; }
+.colunas h3 { margin: 0 0 14px; }
+.colunas h3:not(:first-child) { margin-top: 28px; }
+
+.timeline { border-left: 3px solid var(--destaque); padding-left: 20px; }
+.timeline li { margin-bottom: 22px; position: relative; }
+.timeline li::before {                     /* bolinha na linha do tempo */
+  content: "";
+  position: absolute;
+  left: -29px; top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--destaque);
+}
+.periodo { display: block; font-size: .85rem; color: var(--destaque); font-weight: 600; }
+.timeline p { color: var(--texto-suave); }
+
+.lista li { padding: 8px 0; border-bottom: 1px solid var(--borda); }
+
+/* ---------- Portfólio (grade de projetos) ---------- */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));  /* responsivo sem media query */
+  gap: 22px;
+}
+.projeto { display: flex; flex-direction: column; gap: 10px; transition: transform .2s; }
+.projeto:hover { transform: translateY(-4px); }
+.projeto p { color: var(--texto-suave); font-size: .95rem; }
+.projeto a { margin-top: auto; font-weight: 600; text-decoration: none; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span {
+  font-size: .75rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+}
+
+/* ---------- Formulário de contato ---------- */
+.campo { margin-bottom: 18px; }
+.campo label { display: block; font-weight: 600; margin-bottom: 6px; }
+.campo input, .campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--texto);
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+.campo input:focus, .campo textarea:focus {
+  outline: 2px solid var(--destaque);
+  border-color: transparent;
+}
+.campo.invalido input, .campo.invalido textarea { border-color: #e5484d; }  /* campo com erro */
+.erro { display: block; min-height: 1.2em; margin-top: 4px; color: #e5484d; font-size: .85rem; }
+
+/* ---------- Rodapé ---------- */
+.rodape { text-align: center; padding: 28px 20px; color: var(--texto-suave); border-top: 1px solid var(--borda); }
+
+/* ---------- Modal de confirmação ---------- */
+.modal {
+  position: fixed; inset: 0;
+  background: rgba(0, 0, 0, .55);
+  display: grid; place-items: center;
+  z-index: 100;
+  padding: 20px;
+}
+.modal[hidden] { display: none; }
+.modal-caixa {
+  background: var(--cartao);
+  border-radius: 14px;
+  padding: 30px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+.modal-caixa h3 { margin-bottom: 10px; color: var(--destaque); }
+.modal-caixa p { margin-bottom: 20px; color: var(--texto-suave); }
+
+/* ---------- Responsivo (tablets e celulares) ---------- */
+@media (max-width: 760px) {
+  .btn-menu { display: block; }
+
+  /* Menu vira uma gaveta que desce do topo; o JS adiciona/remove a classe .aberto */
+  .lista-menu {
+    position: absolute;
+    top: var(--altura-topo); left: 0; right: 0;
+    flex-direction: column;
+    background: var(--fundo-alt);
+    border-bottom: 1px solid var(--borda);
+    padding: 10px 20px;
+    display: none;
+  }
+  .lista-menu.aberto { display: flex; }
+
+  .sobre-grid, .colunas { grid-template-columns: 1fr; }
+  .sobre-texto h1 { font-size: 2.1rem; }
+}

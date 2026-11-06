@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- Doctype HTML5 + idioma da página (acessibilidade e SEO) -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport: necessário para o layout responsivo em celulares e tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio online de Diego Davi Orlonski, desenvolvedor de software em Curitiba-PR.">
+  <title>Diego Davi Orlonski | Portfólio</title>
+  <link rel="stylesheet" href="estilo.css">
+  <!-- Aplica o tema salvo ANTES de renderizar, evitando "piscada" de tema -->
+  <script>
+    try {
+      var t = localStorage.getItem('tema');
+      if (t) document.documentElement.setAttribute('data-tema', t);
+    } catch (e) { /* localStorage indisponível: segue com o tema padrão */ }
+  </script>
+</head>
+<body>
+
+  <!-- ===================== MENU FIXO NO TOPO ===================== -->
+  <header class="topo">
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#sobre" class="logo">Diego<span>.dev</span></a>
+
+      <!-- Botão hambúrguer: visível apenas em telas pequenas (controlado via JS) -->
+      <button class="btn-menu" id="btnMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="listaMenu">☰</button>
+
+      <ul class="lista-menu" id="listaMenu">
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <!-- Alternador de tema claro/escuro -->
+      <button class="btn-tema" id="btnTema" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== SEÇÃO: SOBRE MIM ===================== -->
+    <section id="sobre" class="secao">
+      <div class="container sobre-grid">
+        <div class="sobre-texto">
+          <p class="saudacao">Olá, eu sou</p>
+          <h1>Diego Davi Orlonski</h1>
+          <p class="cargo">Desenvolvedor de software · Curitiba, PR</p>
+          <p>
+            Trabalho com desenvolvimento de sistemas corporativos na <strong>KMM Engenharia de Sistemas</strong>,
+            atuando em um sistema de gestão de transportes (TMS) com Oracle PL/SQL, Java, React e Delphi,
+            além de integrações com a infraestrutura fiscal brasileira (CT-e, MDF-e, NF-e).
+          </p>
+          <p>
+            Fora do trabalho, desenvolvo projetos próprios: aplicativos mobile para motoristas de carga,
+            sites e lojas virtuais para clientes e infraestrutura própria em servidor VPS.
+            Também tenho um negócio de locação de equipamentos fitness.
+          </p>
+
+          <h2 class="subtitulo">Hobbies e interesses</h2>
+          <ul class="chips">
+            <li>🍖 Churrasco e culinária</li>
+            <li>✈️ Viagens</li>
+            <li>🏋️ Fitness</li>
+            <li>🏠 Reformas e melhorias em casa</li>
+            <li>💻 Projetos pessoais de programação</li>
+          </ul>
+
+          <a href="#contato" class="botao">Fale comigo</a>
+        </div>
+
+        <!-- Cartão lateral com dados rápidos -->
+        <aside class="cartao dados">
+          <div class="avatar" aria-hidden="true">DO</div>
+          <dl>
+            <dt>Localização</dt><dd>Curitiba, Paraná</dd>
+            <dt>Atuação</dt><dd>Desenvolvimento back-end, mobile e web</dd>
+            <dt>Tecnologias</dt><dd>PL/SQL, Java, React, React Native, JavaScript</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO: FORMAÇÃO ===================== -->
+    <section id="formacao" class="secao alt">
+      <div class="container">
+        <h2 class="titulo-secao">Formação</h2>
+
+        <div class="colunas">
+          <!-- Linha do tempo de formação -->
+          <div>
+            <h3>Formação educacional</h3>
+            <ul class="timeline">
+              <li>
+                <span class="periodo">Em andamento</span>
+                <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong>
+                <p>Centro Universitário Internacional UNINTER.</p>
+              </li>
+              <li>
+                <span class="periodo">2013</span>
+                <strong>Ensino médio</strong>
+                <p>Formação concluída.</p>
+              </li>
+            </ul>
+
+            <h3>Idiomas</h3>
+            <ul class="lista">
+              <li><strong>Português</strong> — nativo</li>
+              <li><strong>Inglês</strong> — básico</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Cursos e certificações (Alura, 2022)</h3>
+            <ul class="lista">
+              <li>HTML5 e CSS3 — partes 1, 2, 3 e 4 <em>(ago. 2022)</em></li>
+              <li>Arquitetura CSS: descomplicando os problemas <em>(ago. 2022)</em></li>
+              <li>JavaScript: Arrays <em>(jul. 2022)</em></li>
+              <li>NestJS: criando uma API Rest com TypeScript <em>(jul. 2022)</em></li>
+              <li>React: desenvolvendo com JavaScript <em>(ago. 2022)</em></li>
+              <li>React: conhecendo a biblioteca React Router <em>(set. 2022)</em></li>
+              <li>React: integrando seu projeto React com APIs <em>(set. 2022)</em></li>
+              <li>React Native: criando um app <em>(set. 2022)</em></li>
+              <li>Git e Github: controle e compartilhe seu código <em>(set. 2022)</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO: PORTFÓLIO ===================== -->
+    <section id="portfolio" class="secao">
+      <div class="container">
+        <h2 class="titulo-secao">Portfólio</h2>
+        <p class="intro">Alguns dos projetos em que trabalhei. Os links levam ao código ou ao perfil no GitHub.</p>
+
+        <div class="grade">
+          <!-- Cada projeto é um cartão (article) com título, descrição, tecnologias e link -->
+          <article class="cartao projeto">
+            <h3>Schaba Motorista</h3>
+            <p>Aplicativo Android para motoristas de carga com rastreamento por GPS, funcionamento offline e
+               remoção de duplicidade de locais de descarga por geolocalização.</p>
+            <p class="tags"><span>React Native</span><span>GPS</span><span>Offline-first</span></p>
+            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </article>
+
+          <article class="cartao projeto">
+            <h3>Roteamento para caçambas</h3>
+            <p>App de roteamento offline para caminhões caçamba, com mapa, polilinha e rota entre origem e destino.</p>
+            <p class="tags"><span>React Native</span><span>Mapas</span><span>Offline</span></p>
+            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </article>
+
+          <article class="cartao projeto">
+            <h3>Dashboard Azure DevOps</h3>
+            <p>Integração que coleta métricas de cards do Azure DevOps e as grava em banco Oracle para
+               alimentar um painel de acompanhamento.</p>
+            <p class="tags"><span>Oracle</span><span>PL/SQL</span><span>API REST</span></p>
+            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </article>
+
+          <article class="cartao projeto">
+            <h3>Plugins para marketplace</h3>
+            <p>Desenvolvimento de plugins para um marketplace de locação de equipamentos baseado em WooCommerce.</p>
+            <p class="tags"><span>PHP</span><span>WooCommerce</span></p>
+            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO: CONTATO ===================== -->
+    <section id="contato" class="secao alt">
+      <div class="container estreito">
+        <h2 class="titulo-secao">Contato</h2>
+        <p class="intro">Envie uma mensagem. Todos os campos são obrigatórios.</p>
+
+        <!-- novalidate: desliga a validação nativa para usarmos a validação em JavaScript -->
+        <form id="formContato" class="cartao form" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome">
+            <small class="erro" id="erroNome" role="alert"></small>
+          </div>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="usuario@dominio.com">
+            <small class="erro" id="erroEmail" role="alert"></small>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+            <small class="erro" id="erroMensagem" role="alert"></small>
+          </div>
+
+          <button type="submit" class="botao">Enviar mensagem</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© <span id="ano">2026</span> Diego Davi Orlonski · Feito com HTML, CSS e JavaScript puros.</p>
+  </footer>
+
+  <!-- ===================== MODAL DE CONFIRMAÇÃO ===================== -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <h3 id="modalTitulo">Mensagem enviada com sucesso!</h3>
+      <p>Obrigado pelo contato. Retorno assim que possível.</p>
+      <button class="botao" id="fecharModal">Fechar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
