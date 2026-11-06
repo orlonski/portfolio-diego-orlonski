@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <!-- Viewport: necessário para o layout responsivo em celulares e tablets -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio online de Diego Davi Orlonski, desenvolvedor de software em Curitiba-PR.">
+  <meta name="description" content="Portfólio online de Diego Davi Orlonski, estudante de Análise e Desenvolvimento de Sistemas em Ponta Grossa-PR.">
   <title>Diego Davi Orlonski | Portfólio</title>
   <link rel="stylesheet" href="estilo.css">
   <!-- Aplica o tema salvo ANTES de renderizar, evitando "piscada" de tema -->
@@ -21,7 +21,7 @@
   <!-- ===================== MENU FIXO NO TOPO ===================== -->
   <header class="topo">
     <nav class="menu" aria-label="Navegação principal">
-      <a href="#sobre" class="logo">Diego<span>.dev</span></a>
+      <a href="#sobre" class="logo">Diego<span> Orlonski</span></a>
 
       <!-- Botão hambúrguer: visível apenas em telas pequenas (controlado via JS) -->
       <button class="btn-menu" id="btnMenu" aria-label="Abrir menu" aria-expanded="false" aria-controls="listaMenu">☰</button>
@@ -46,25 +46,21 @@
         <div class="sobre-texto">
           <p class="saudacao">Olá, eu sou</p>
           <h1>Diego Davi Orlonski</h1>
-          <p class="cargo">Desenvolvedor de software · Curitiba, PR</p>
+          <p class="cargo">Estudante de Análise e Desenvolvimento de Sistemas · Ponta Grossa, PR</p>
           <p>
-            Trabalho com desenvolvimento de sistemas corporativos na <strong>KMM Engenharia de Sistemas</strong>,
-            atuando em um sistema de gestão de transportes (TMS) com Oracle PL/SQL, Java, React e Delphi,
-            além de integrações com a infraestrutura fiscal brasileira (CT-e, MDF-e, NF-e).
+            Sou estudante do curso superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+            da UNINTER e tenho interesse em desenvolvimento web e de aplicativos.
           </p>
           <p>
-            Fora do trabalho, desenvolvo projetos próprios: aplicativos mobile para motoristas de carga,
-            sites e lojas virtuais para clientes e infraestrutura própria em servidor VPS.
-            Também tenho um negócio de locação de equipamentos fitness.
+            Já estudei HTML5, CSS3, JavaScript, React, React Native, NestJS e Git/GitHub em cursos online,
+            e este portfólio foi feito com HTML, CSS e JavaScript puros como atividade da disciplina
+            Fundamentos da Programação Web.
           </p>
 
           <h2 class="subtitulo">Hobbies e interesses</h2>
           <ul class="chips">
             <li>🍖 Churrasco e culinária</li>
             <li>✈️ Viagens</li>
-            <li>🏋️ Fitness</li>
-            <li>🏠 Reformas e melhorias em casa</li>
-            <li>💻 Projetos pessoais de programação</li>
           </ul>
 
           <a href="#contato" class="botao">Fale comigo</a>
@@ -74,9 +70,9 @@
         <aside class="cartao dados">
           <div class="avatar" aria-hidden="true">DO</div>
           <dl>
-            <dt>Localização</dt><dd>Curitiba, Paraná</dd>
-            <dt>Atuação</dt><dd>Desenvolvimento back-end, mobile e web</dd>
-            <dt>Tecnologias</dt><dd>PL/SQL, Java, React, React Native, JavaScript</dd>
+            <dt>Localização</dt><dd>Ponta Grossa, Paraná</dd>
+            <dt>Formação</dt><dd>Tecnologia em Análise e Desenvolvimento de Sistemas</dd>
+            <dt>Estudos</dt><dd>HTML, CSS, JavaScript, React, Git e GitHub</dd>
           </dl>
         </aside>
       </div>
@@ -133,38 +129,16 @@
     <section id="portfolio" class="secao">
       <div class="container">
         <h2 class="titulo-secao">Portfólio</h2>
-        <p class="intro">Alguns dos projetos em que trabalhei. Os links levam ao código ou ao perfil no GitHub.</p>
+        <p class="intro">Trabalhos realizados, com links para o código e para o site publicado.</p>
 
         <div class="grade">
-          <!-- Cada projeto é um cartão (article) com título, descrição, tecnologias e link -->
+          <!-- Cada trabalho é um cartão (article) com título, descrição, tecnologias e links -->
           <article class="cartao projeto">
-            <h3>Schaba Motorista</h3>
-            <p>Aplicativo Android para motoristas de carga com rastreamento por GPS, funcionamento offline e
-               remoção de duplicidade de locais de descarga por geolocalização.</p>
-            <p class="tags"><span>React Native</span><span>GPS</span><span>Offline-first</span></p>
-            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
-          </article>
-
-          <article class="cartao projeto">
-            <h3>Roteamento para caçambas</h3>
-            <p>App de roteamento offline para caminhões caçamba, com mapa, polilinha e rota entre origem e destino.</p>
-            <p class="tags"><span>React Native</span><span>Mapas</span><span>Offline</span></p>
-            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
-          </article>
-
-          <article class="cartao projeto">
-            <h3>Dashboard Azure DevOps</h3>
-            <p>Integração que coleta métricas de cards do Azure DevOps e as grava em banco Oracle para
-               alimentar um painel de acompanhamento.</p>
-            <p class="tags"><span>Oracle</span><span>PL/SQL</span><span>API REST</span></p>
-            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
-          </article>
-
-          <article class="cartao projeto">
-            <h3>Plugins para marketplace</h3>
-            <p>Desenvolvimento de plugins para um marketplace de locação de equipamentos baseado em WooCommerce.</p>
-            <p class="tags"><span>PHP</span><span>WooCommerce</span></p>
-            <a href="https://github.com/orlonski" target="_blank" rel="noopener">Ver no GitHub →</a>
+            <h3>Portfólio online (este site)</h3>
+            <p>Site de currículo online feito como atividade prática de Fundamentos da Programação Web,
+               com menu por âncoras, tema claro/escuro, layout responsivo e formulário com validação em JavaScript.</p>
+            <p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></p>
+            <a href="https://github.com/orlonski/portfolio-diego-orlonski" target="_blank" rel="noopener">Ver código no GitHub →</a>
           </article>
         </div>
       </div>
