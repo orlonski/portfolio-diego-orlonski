@@ -288,3 +288,9 @@ ul { list-style: none; }
   .sobre-grid, .colunas { grid-template-columns: 1fr; }
   .sobre-texto h1 { font-size: 2.1rem; }
 }
+
+/* ---------- Imagens ---------- */
+.ilustracao { width: 100%; height: auto; border-radius: 14px; box-shadow: var(--sombra); grid-column: 2; }
+.capa-projeto { width: 100%; height: auto; border-radius: 10px; }
+.grade { grid-template-columns: repeat(auto-fit, minmax(240px, 480px)); }
+@media (max-width: 760px) { .ilustracao { grid-column: 1; } }
